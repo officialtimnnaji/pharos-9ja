@@ -1,0 +1,30 @@
+{
+  "regionalModerators": [
+    {
+      "id": 1,
+      "name": "Kelechi Timothy",
+      "role": "Regional Moderator",
+      "image": "/images/members/kelechi.jpg"
+    },
+    {
+      "id": 2,
+      "name": "TBD",
+      "role": "Regional Moderator",
+      "image": "/images/members/placeholder.jpg"
+    }
+  ],
+  "ogs": [
+    {
+      "id": 3,
+      "name": "John Doe",
+      "role": "OG",
+      "image": "/images/members/placeholder.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Jane Doe",
+      "role": "OG",
+      "image": "/images/members/placeholder.jpg"
+    }
+  ]
+}

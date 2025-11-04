@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Kelechi Timothy",
+    "role": "Regional Moderator",
+    "image": "/images/members/kelechi.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Ada Nwosu",
+    "role": "Regional Moderator",
+    "image": "/images/members/ada.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Tunde Lawal",
+    "role": "OG",
+    "image": "/images/members/placeholder.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Jane Doe",
+    "role": "Builder Proof",
+    "image": "/images/members/placeholder.jpg"
+  },
+  {
+    "id": 5,
+    "name": "John Smith",
+    "role": "Story Teller",
+    "image": "/images/members/placeholder.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Random Member",
+    "role": "",
+    "image": "/images/members/placeholder.jpg"
+  }
+]
