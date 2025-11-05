@@ -37,5 +37,17 @@
     "title": "Gocto Pika",
     "subtitle": "Find the Light  🌕🪸",
     "image": "/images/slider/slide6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Gocto Pika",
+    "subtitle": "A great day to touch grass!",
+    "image": "/images/slider/slide7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Legendary CEO: Wish Longer",
+    
+    "image": "/images/slider/slide8.jpg"
   }
 ]
