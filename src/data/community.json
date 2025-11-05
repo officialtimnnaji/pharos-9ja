@@ -26,29 +26,32 @@
       "name": "Darkfallx",
       "role": "OG",
       "image": "/images/members/darkfallx.jpg"
-    }
+    },
+
+    {
+    "id": 5,
+    "name": "Shock4Wave",
+    "role": "OG",
+    "image": "/images/members/shock4wave.jpg"
+  }
+
+
+
+
   ],
   "contributors": [
     {
-      "id": 5,
+      "id": 6,
       "name": "Geetee",
       "role": "Regional contributor",
       "image": "/images/members/geetee.jpg"
     },
 
     {
-      "id": 6,
+      "id": 7,
       "name": "BigNelson",
       "role": "Regional contributor",
       "image": "/images/members/bignelson.jpg"
-    },
-
-    {
-      "id": 7,
-      "name": "Divine",
-      "role": "Regional contributor",
-      "image": "/images/members/divine.jpg"
     }
-    
   ]
 }

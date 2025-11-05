@@ -36,5 +36,41 @@
     "name": "Geetee",
     "role": "Regional contributor",
     "image": "/images/members/geetee.jpg"
-  }
+  },
+
+  {
+      "id": 11,
+      "name": "Divine",
+      "role": "Builder-Proof",
+      "image": "/images/members/divine.jpg"
+    },
+
+    {
+      "id": 7,
+      "name": "001ofPharos",
+      "role": "Storyteller",
+      "image": "/images/members/001ofpharos.jpg"
+    },
+
+    {
+      "id": 8,
+      "name": "Pnektar",
+      "role": "Storyteller",
+      "image": "/images/members/pnektar.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Damibabs",
+      "role": "Storyteller",
+      "image": "/images/members/damibabs.jpg"
+    },
+
+    {
+      "id": 10,
+      "name": "Briamach",
+      "role": "Storyteller",
+      "image": "/images/members/briamach.jpg"
+    }
+
+  
 ]

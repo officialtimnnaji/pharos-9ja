@@ -10,8 +10,8 @@ export default function Navbar() {
 
   return (
     <header className="fixed w-full z-50 backdrop-blur-md bg-pharos-gradient">
-      <nav className="flex justify-between items-center px-6 md:px-12 py-4 text-white font-medium">
-        <Link to="/" className="text-2xl font-bold">
+      <nav className="flex justify-between items-center px-6 md:px-12 py-4 font-medium">
+        <Link to="/" className="text-2xl font-bold text-white">
           Pharos Nigeria
         </Link>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden z-50"
+          className="md:hidden z-50 text-white"
           onClick={() => setOpen(!open)}
           aria-label="Toggle Menu"
         >
@@ -66,12 +66,12 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {open && (
-          <ul className="absolute top-full right-0 mt-2 w-48 bg-transparent flex flex-col items-start shadow-lg py-2 text-white space-y-2 px-4 rounded-lg">
+          <ul className="absolute top-full right-1 mt-0.1 flex flex-col items-start space-y-0 z-40 bg-transparent">
             <li>
               <Link
                 to="/"
                 onClick={handleLinkClick}
-                className="w-full block hover:text-pharosGold transition-colors"
+                className="w-auto block text-red-900 font-semibold hover:text-pharosGold transition-colors px-1 py-0.5 rounded"
               >
                 Home
               </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
               <Link
                 to="/community"
                 onClick={handleLinkClick}
-                className="w-full block hover:text-pharosGold transition-colors"
+                className="w-auto block text-red-900 font-semibold hover:text-pharosGold transition-colors px-1 py-0.5 rounded"
               >
                 Community
               </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
               <Link
                 to="/events"
                 onClick={handleLinkClick}
-                className="w-full block hover:text-pharosGold transition-colors"
+                className="w-auto block text-red-900 font-semibold hover:text-pharosGold transition-colors px-1 py-0.5 rounded"
               >
                 Events
               </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
               <Link
                 to="/members"
                 onClick={handleLinkClick}
-                className="w-full block hover:text-pharosGold transition-colors"
+                className="w-auto block text-red-900 font-semibold hover:text-pharosGold transition-colors px-1 py-0.5 rounded"
               >
                 Members
               </Link>
