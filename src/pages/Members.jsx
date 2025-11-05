@@ -1,6 +1,6 @@
 import React from "react";
-import { members } from "../data/members";
 import MemberCard from "../components/MemberCard";
+import membersData from "../data/members.json";
 
 export default function Members() {
   return (
@@ -9,7 +9,7 @@ export default function Members() {
         Community Members
       </h1>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {members.map((member) => (
+        {membersData.map((member) => (
           <MemberCard
             key={member.id}
             name={member.name}

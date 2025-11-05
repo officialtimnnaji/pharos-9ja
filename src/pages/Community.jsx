@@ -1,6 +1,6 @@
 import React from "react";
-import { communityData } from "../data/community";
 import MemberCard from "../components/MemberCard";
+import communityData from "../data/community.json";
 
 export default function Community() {
   const { leads, ogs, contributors } = communityData;
@@ -13,7 +13,9 @@ export default function Community() {
 
       {/* Leads */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-pharosBlue mb-6">Community Leads</h2>
+        <h2 className="text-3xl font-semibold text-red-800 mb-6 text-center">
+          Community Leads
+        </h2>
         <div className="flex flex-wrap gap-6 justify-center">
           {(leads || []).map((lead) => (
             <MemberCard
@@ -28,7 +30,9 @@ export default function Community() {
 
       {/* OGs */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-pharosPurple mb-6">OG Members</h2>
+        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500 mb-6 text-center">
+          OG Members
+        </h2>
         <div className="flex flex-wrap gap-6 justify-center">
           {(ogs || []).map((og) => (
             <MemberCard
@@ -43,7 +47,9 @@ export default function Community() {
 
       {/* Contributors */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-pharosGreen mb-6">Contributors</h2>
+        <h2 className="text-3xl font-semibold text-green-600 mb-6 text-center">
+          Contributors
+        </h2>
         <div className="flex flex-wrap gap-6 justify-center">
           {(contributors || []).map((contributor) => (
             <MemberCard
