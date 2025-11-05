@@ -1,19 +1,19 @@
 import React from "react";
+import communityData from "../data/community.json"; // <- DEFAULT import
 import MemberCard from "../components/MemberCard";
-import communityData from "../data/community.json";
 
 export default function Community() {
   const { leads, ogs, contributors } = communityData;
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
+    <div className="p-8 max-w-6xl mx-auto pt-32">
       <h1 className="text-4xl font-bold text-pharosGold mb-8 text-center">
         Meet Our Community
       </h1>
 
       {/* Leads */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-red-800 mb-6 text-center">
+        <h2 className="text-3xl font-semibold text-red-900 mb-6">
           Community Leads
         </h2>
         <div className="flex flex-wrap gap-6 justify-center">
@@ -30,7 +30,7 @@ export default function Community() {
 
       {/* OGs */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500 mb-6 text-center">
+        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500 mb-6">
           OG Members
         </h2>
         <div className="flex flex-wrap gap-6 justify-center">
@@ -47,7 +47,7 @@ export default function Community() {
 
       {/* Contributors */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-green-600 mb-6 text-center">
+        <h2 className="text-3xl font-semibold text-green-600 mb-6">
           Contributors
         </h2>
         <div className="flex flex-wrap gap-6 justify-center">
