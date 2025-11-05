@@ -1,0 +1,33 @@
+name: Update Events JSON Weekly
+
+# Schedule: Every Monday at 00:00 UTC
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-events:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Update events.json
+        run: |
+          echo "Running weekly events update..."
+          node scripts/update-events.js
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/events.json
+          git commit -m "Weekly events update" || echo "No changes to commit"
+          git push

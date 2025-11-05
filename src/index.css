@@ -2,89 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🌍 Global Style */
+/* Global body styles */
 body {
-  @apply bg-gradient-to-b from-pharosNavy via-gray-900 to-black text-gray-100 font-sans overflow-x-hidden;
+  @apply bg-gray-50 text-gray-900 font-sans;
 }
 
-/* ✨ Navbar Glass Effect */
+/* Smooth scroll for the whole site */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar tweaks */
 header {
-  @apply fixed w-full z-50 backdrop-blur-lg bg-white/10 border-b border-white/10 transition-all duration-300;
+  @apply fixed w-full z-50 backdrop-blur-md;
 }
 
-/* Links */
-nav a {
-  @apply transition-colors duration-300 hover:text-pharosGold;
+/* Buttons */
+button {
+  @apply transition transform hover:-translate-y-1 hover:scale-105;
 }
 
-/* 💎 Buttons */
-.btn-primary {
-  @apply bg-pharosGreen text-white font-semibold px-6 py-3 rounded-2xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+/* Cards */
+.card {
+  @apply bg-white rounded-2xl shadow-card p-6 border border-gray-100 transition transform hover:shadow-card-hover hover:-translate-y-1;
 }
 
-/* 📱 Mobile Dropdown Animation */
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
+/* Images in cards */
+.card img {
+  @apply rounded-full border-4 border-pharosGold object-cover;
+}
+
+/* Slider overlay */
+.slider-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white px-6;
+}
+
+/* Scrollbar (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-pharosGold rounded-full;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    @apply text-center;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .card {
+    @apply p-4;
   }
-}
-
-.mobile-menu {
-  animation: slideDown 0.3s ease forwards;
-}
-
-/* 🦶 Footer */
-footer {
-  @apply bg-black/40 text-gray-300 text-center py-6 text-sm md:text-base;
-}
-
-/* 🌈 Animated Gradient Background */
-@keyframes gradientFlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradientFlow {
-  background-size: 200% 200%;
-  animation: gradientFlow 10s ease infinite;
-}
-
-/* ✨ Fade-in-up animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 1.2s ease forwards;
-}
-
-.slide-enter {
-  opacity: 0;
-  transform: scale(1.02);
-}
-
-.slide-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-button:focus {
-  outline: none;
 }

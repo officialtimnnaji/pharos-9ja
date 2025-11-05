@@ -1,36 +1,29 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
       colors: {
-        pharosGreen: "#00B074",
-        pharosGold: "#FFD700",
-        pharosNavy: "#003C43",
-        pharosWhite: "#FFFFFF",
-        pharosGray: "#F5F5F5",
+        pharosGold: '#FFD700',
+        pharosGreen: '#00B894',
+        pharosBlue: '#0984e3',
+        pharosPurple: '#6c5ce7'
       },
       backgroundImage: {
-        "pharos-gradient":
-          "linear-gradient(135deg, #003C43 0%, #00B074 35%, #FFD700 85%)",
+        'pharos-gradient': 'linear-gradient(90deg, #00B894 0%, #6c5ce7 50%, #FFD700 100%)'
       },
       boxShadow: {
-        glow: "0 0 20px rgba(0, 176, 116, 0.4)",
-        gold: "0 0 15px rgba(255, 215, 0, 0.3)",
+        'card': '0 10px 20px rgba(0,0,0,0.1)',
+        'card-hover': '0 15px 30px rgba(0,0,0,0.2)'
       },
-      keyframes: {
-        gradientFlow: {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-        },
-      },
-      animation: {
-        gradientFlow: "gradientFlow 8s ease infinite",
-      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem'
+      }
     },
   },
   plugins: [],
-};
+}

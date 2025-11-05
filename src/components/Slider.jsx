@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useDrag } from "framer-motion";
 import slides from "../data/slides.json";
 
 export default function Slider() {
@@ -15,7 +14,7 @@ export default function Slider() {
     setCurrent(current === slides.length - 1 ? 0 : current + 1);
   };
 
-  // Autoplay
+  // Autoplay every 5 seconds
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
@@ -57,13 +56,15 @@ export default function Slider() {
         )}
       </AnimatePresence>
 
-      {/* Arrows */}
+      {/* Left Arrow */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 p-2 rounded-full hover:bg-pharosGold transition"
       >
         <ChevronLeft className="w-6 h-6 text-white" />
       </button>
+
+      {/* Right Arrow */}
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 p-2 rounded-full hover:bg-pharosGold transition"
