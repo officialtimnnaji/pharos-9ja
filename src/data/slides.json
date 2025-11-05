@@ -2,19 +2,19 @@
   {
     "id": 1,
     "title": "Welcome to Pharos Nigeria",
-    "subtitle": "Building the Web3 ecosystem in Nigeria",
+    "subtitle": "The first branch of the Pharos Network in Nigeria",
     "image": "/images/slider/slide1.jpg"
   },
   {
     "id": 2,
-    "title": "Weekly Community Events",
-    "subtitle": "Join our builders, storytellers, and contributors",
+    "title": "Building Real-World Assets",
+    "subtitle": "Exploring blockchain use cases in the real world",
     "image": "/images/slider/slide2.jpg"
   },
   {
     "id": 3,
-    "title": "Learn, Collaborate, Grow",
-    "subtitle": "Empowering Nigerian Web3 innovators",
+    "title": "Join Our Community",
+    "subtitle": "Connect, learn, and grow with other builders",
     "image": "/images/slider/slide3.jpg"
   }
 ]

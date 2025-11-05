@@ -1,66 +1,60 @@
 import React from "react";
-import { motion } from "framer-motion";
-import communityData from "../data/community.json";
+import { communityData } from "../data/community";
 import MemberCard from "../components/MemberCard";
 
 export default function Community() {
+  const { leads, ogs, contributors } = communityData;
+
   return (
-    <section className="p-8 text-center bg-gradient-to-b from-white to-gray-50 min-h-screen">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl font-extrabold text-pharosGold mb-10"
-      >
+    <div className="p-8 max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold text-pharosGold mb-8 text-center">
         Meet Our Community
-      </motion.h2>
+      </h1>
 
-      {/* Community Leads */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="mb-16"
-      >
-        <h3 className="text-2xl font-bold text-pharosNavy mb-6">
-          Community Leads
-        </h3>
-        <div className="flex flex-wrap justify-center gap-6">
-          {(communityData.leads || []).map((lead, index) => (
-            <motion.div
+      {/* Leads */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold text-pharosBlue mb-6">Community Leads</h2>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {(leads || []).map((lead) => (
+            <MemberCard
               key={lead.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-            >
-              <MemberCard {...lead} />
-            </motion.div>
+              name={lead.name}
+              role={lead.role}
+              image={lead.image}
+            />
           ))}
         </div>
-      </motion.div>
+      </section>
 
-      {/* Community OGs */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-      >
-        <h3 className="text-2xl font-bold text-pharosNavy mb-6">
-          Community OGs
-        </h3>
-        <div className="flex flex-wrap justify-center gap-6">
-          {(communityData.ogs || []).map((og, index) => (
-            <motion.div
+      {/* OGs */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold text-pharosPurple mb-6">OG Members</h2>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {(ogs || []).map((og) => (
+            <MemberCard
               key={og.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 + 0.4, duration: 0.5 }}
-            >
-              <MemberCard {...og} />
-            </motion.div>
+              name={og.name}
+              role={og.role}
+              image={og.image}
+            />
           ))}
         </div>
-      </motion.div>
-    </section>
+      </section>
+
+      {/* Contributors */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold text-pharosGreen mb-6">Contributors</h2>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {(contributors || []).map((contributor) => (
+            <MemberCard
+              key={contributor.id}
+              name={contributor.name}
+              role={contributor.role}
+              image={contributor.image}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
