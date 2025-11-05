@@ -70,7 +70,12 @@
       "name": "Briamach",
       "role": "Storyteller",
       "image": "/images/members/briamach.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Perp",
+      "role": "Community member",
+      "image": "/images/members/perp.jpg"
     }
 
-  
 ]
