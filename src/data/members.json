@@ -76,6 +76,12 @@
       "name": "Perp",
       "role": "Community member",
       "image": "/images/members/perp.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Philomin",
+      "role": "Community member",
+      "image": "/images/members/philomin.jpg"
     }
 
 ]
