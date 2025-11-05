@@ -1,32 +1,40 @@
 [
   {
     "id": 1,
-    "name": "Kelechi Timothy",
+    "name": "Luxury Nad",
     "role": "Regional Moderator",
-    "image": "/images/members/kelechi.jpg"
+    "image": "/images/members/luxurynad.jpg"
   },
   {
     "id": 2,
-    "name": "Ada Nwosu",
+    "name": "Crypto Tiger",
     "role": "Regional Moderator",
-    "image": "/images/members/ada.jpg"
+    "image": "/images/members/cryptotiger.jpg"
   },
   {
     "id": 3,
-    "name": "Tunde Lawal",
+    "name": "Secgen",
     "role": "OG",
-    "image": "/images/members/tunde.jpg"
+    "image": "/images/members/secgen.jpg"
   },
   {
     "id": 4,
-    "name": "Pharos Nigeria Team",
-    "role": "Builder",
-    "image": "/images/members/team.jpg"
+    "name": "Shock4Wave",
+    "role": "OG",
+    "image": "/images/members/shock4wave.jpg"
   },
+
   {
     "id": 5,
-    "name": "Jane Doe",
-    "role": "Storyteller",
-    "image": "/images/members/jane.jpg"
+    "name": "Darkfallx",
+    "role": "OG",
+    "image": "/images/members/darkfallx.jpg"
+  },
+
+  {
+    "id": 6,
+    "name": "Geetee",
+    "role": "Regional contributor",
+    "image": "/images/members/geetee.jpg"
   }
 ]

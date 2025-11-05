@@ -1,38 +1,31 @@
 {
   "ongoing": [
     {
-      "id": 1,
-      "title": "Monday Builders Meetup",
-      "date": "Every Monday",
-      "time": "6:00 PM WAT",
-      "host": "Kelechi Timothy",
-      "guide": "Building together and exploring real-world blockchain use cases."
-    },
-    {
-      "id": 2,
-      "title": "Thursday Deep Dive",
-      "date": "Every Thursday",
-      "time": "7:00 PM WAT",
-      "host": "Ada Nwosu",
-      "guide": "Technical exploration into smart contracts and Pharos protocol."
+      "id": "1",
+      "title": "Happy Birtday Darkfallx",
+      "date": "5th November, 2025",
+      "time": "",
+      "host": "Darkfallx",
+      "guide": "We honor our Og Darkfallx on his special day! Join us in celebrating his contributions to the Pharos Nigeria Community"
     }
+    
   ],
   "upcoming": [
     {
-      "id": 3,
-      "title": "Friday Chill & Learn",
-      "date": "Friday, Nov 8, 2025",
+      "id": 2,
+      "title": "GEOGUESSER",
+      "date": "Thursday, Nov 6, 2025",
       "time": "6:00 PM WAT",
-      "host": "Tunde Lawal",
-      "guide": "Relaxed learning session for new members — Q&A and hands-on demos."
+      "host": "Man_consummate",
+      "guide": "A fun geography guessing game to test your knowledge of world locations."
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "Saturday X-Space",
-      "date": "Saturday, Nov 9, 2025",
+      "date": "Saturday, Nov 8, 2025",
       "time": "8:00 PM WAT",
-      "host": "Pharos Nigeria Team",
-      "guide": "Twitter Space for weekly updates, insights, and community chats."
+      "host": "LuxuryNad",
+      "guide": "Space for weekly updates, insights, and genuine connections."
     }
   ]
 }

@@ -2,29 +2,29 @@
   "regionalModerators": [
     {
       "id": 1,
-      "name": "Kelechi Timothy",
+      "name": "Luxury Nad",
       "role": "Regional Moderator",
-      "image": "/images/members/kelechi.jpg"
+      "image": "/images/members/luxurynad.jpg"
     },
     {
       "id": 2,
-      "name": "TBD",
+      "name": "Crypto Tiger",
       "role": "Regional Moderator",
-      "image": "/images/members/placeholder.jpg"
+      "image": "/images/members/cryptotiger.jpg"
     }
   ],
   "ogs": [
     {
       "id": 3,
-      "name": "John Doe",
+      "name": "Secgen",
       "role": "OG",
-      "image": "/images/members/placeholder.jpg"
+      "image": "/images/members/secgen.jpg"
     },
     {
       "id": 4,
-      "name": "Jane Doe",
+      "name": "Darkfallx",
       "role": "OG",
-      "image": "/images/members/placeholder.jpg"
+      "image": "/images/members/darkfallx.jpg"
     }
   ]
 }

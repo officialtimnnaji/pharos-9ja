@@ -36,9 +36,7 @@ export default function AboutSection() {
           <span className="text-pharosGold font-semibold">
             Pharos Network
           </span>
-          , dedicated to empowering Web3 builders, storytellers, and blockchain
-          enthusiasts across Nigeria. Our mission is to create a strong,
-          inclusive ecosystem that inspires innovation and collaboration.
+          , dedicated to opening doors to the future of blockchain, leveraging the fastest EVM Layer 1 for trade and Real-World Asset (RWA) finance. Our mission is to create a strong, inclusive ecosystem that inspires innovation and collaboration.
         </motion.p>
 
         <motion.p
