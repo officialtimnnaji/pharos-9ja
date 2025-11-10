@@ -1,6 +1,6 @@
 // src/pages/Community.jsx
 import React, { useState } from "react";
-import communityData from "../data/Community.json";
+import communityData from "../data/community.json";
 
 export default function Community() {
   const {
