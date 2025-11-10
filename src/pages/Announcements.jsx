@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import {
   collection,
   onSnapshot,
-  deleteDoc,
-  doc,
   query,
   orderBy,
 } from "firebase/firestore";
@@ -16,7 +14,7 @@ export default function Announcements() {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
 
-  // ✅ Track admin login
+  // ✅ Track admin login (still needed for future admin-only UI features)
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user || null);
@@ -34,14 +32,6 @@ export default function Announcements() {
     return () => unsub();
   }, []);
 
-  const deleteAnnouncement = async (id) => {
-    if (!window.confirm("Delete this announcement?")) return;
-    await deleteDoc(doc(db, "announcements", id));
-  };
-
-  // ✅ Replace this with your actual admin UID(s)
-  const adminUIDs = ["2l6mIc47KkQ0OwjfudAN60UbFNe2"];
-
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center items-center text-[#6b0f1a]">
@@ -56,8 +46,9 @@ export default function Announcements() {
       {/* ✅ Page Header */}
       <h2
         className="text-4xl md:text-5xl font-bold text-center mb-12
-      bg-gradient-to-r from-[#6b0f1a] via-[#4e9bfa] to-[#6b0f1a]
-      bg-clip-text text-transparent">
+        bg-gradient-to-r from-[#6b0f1a] via-[#4e9bfa] to-[#6b0f1a]
+        bg-clip-text text-transparent"
+      >
         Announcements
       </h2>
 
@@ -89,11 +80,12 @@ export default function Announcements() {
                 {a.description}
               </p>
 
-              {/* ✅ Link */}
+              {/* ✅ Optional Link */}
               {a.link && (
                 <a
                   href={a.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block text-[#4e9bfa] hover:text-[#6b0f1a] 
                   font-semibold transition-all"
                 >
@@ -101,16 +93,7 @@ export default function Announcements() {
                 </a>
               )}
 
-              {/* ✅ Admin Delete */}
-              {currentUser && adminUIDs.includes(currentUser.uid) && (
-                <button
-                  onClick={() => deleteAnnouncement(a.id)}
-                  className="mt-5 bg-[#6b0f1a] hover:bg-[#4e0009]
-                  text-white px-4 py-1 rounded text-sm transition-all"
-                >
-                  Delete
-                </button>
-              )}
+              {/* ❌ DELETE BUTTON REMOVED COMPLETELY */}
             </div>
           ))
         )}

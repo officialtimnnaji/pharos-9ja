@@ -12,10 +12,12 @@ export default function AdminApprovals() {
   const navigate = useNavigate();
   const prevSubmissionsRef = useRef([]);
 
-  // Check if admin is logged in
+  const ADMIN_UID = "2l6mIc47KkQ0OwjfudAN60UbFNe2";
+
+  // ✅ Check if admin is logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
+      if (currentUser && currentUser.uid === ADMIN_UID) {
         setUser(currentUser);
       } else {
         navigate("/admin/login");
@@ -24,59 +26,66 @@ export default function AdminApprovals() {
     return () => unsubscribe();
   }, [navigate]);
 
-  // Real-time listener for submissions
+  // ✅ Real-time listener for submissions
   useEffect(() => {
-  const q = query(collection(db, "communityContent"));
-  const unsubscribe = onSnapshot(q, (snapshot) => {
-    const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    setSubmissions(data);
+    if (!user) return;
 
-    // Optional: toast new submissions
-    const previousIds = prevSubmissionsRef.current.map((item) => item.id);
-    const newSubmissions = data.filter((item) => !previousIds.includes(item.id));
-    if (newSubmissions.length > 0) {
-      newSubmissions.forEach((item) => toast(`🆕 New submission: ${item.title} by ${item.name}`, { icon: "🚀", duration: 5000 }));
-    }
+    const q = query(collection(db, "communityContent"));
+    const unsubscribe = onSnapshot(
+      q,
+      (snapshot) => {
+        const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setSubmissions(data);
 
-    prevSubmissionsRef.current = data;
-    setLoading(false);
-  });
+        // Toast for new submissions
+        const previousIds = prevSubmissionsRef.current.map((i) => i.id);
+        const newOnes = data.filter((i) => !previousIds.includes(i.id));
+        newOnes.forEach((s) =>
+          toast(`🆕 New submission: ${s.title} by ${s.name}`, {
+            icon: "🚀",
+            duration: 5000,
+          })
+        );
 
-  return () => unsubscribe();
-}, []);
+        prevSubmissionsRef.current = data;
+        setLoading(false);
+      },
+      (error) => {
+        console.error("Snapshot error:", error);
+        toast.error("❌ Permission denied");
+        navigate("/admin/login");
+      }
+    );
 
-  // Count pending submissions
+    return () => unsubscribe();
+  }, [user, navigate]);
+
   const pendingCount = submissions.filter((s) => s.status === "pending").length;
 
   const approveContent = async (id) => {
     try {
       await updateDoc(doc(db, "communityContent", id), { status: "approved" });
-      toast.success("✅ Post approved successfully!");
+      toast.success("✅ Approved!");
     } catch (error) {
       console.error(error);
-      toast.error("❌ Error approving post");
+      toast.error("❌ Permission denied");
     }
   };
 
   const rejectContent = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this submission?")) return;
+    if (!window.confirm("Delete this submission?")) return;
     try {
       await deleteDoc(doc(db, "communityContent", id));
-      toast.success("🗑️ Post deleted successfully!");
+      toast.success("🗑️ Deleted!");
     } catch (error) {
       console.error(error);
-      toast.error("❌ Error deleting post");
+      toast.error("❌ Permission denied");
     }
   };
 
   const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate("/admin/login");
-    } catch (error) {
-      console.error("Logout failed:", error);
-      toast.error("❌ Logout failed");
-    }
+    await signOut(auth);
+    navigate("/admin/login");
   };
 
   if (loading) {
@@ -91,12 +100,11 @@ export default function AdminApprovals() {
     <section className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-800 text-white">
       <Toaster position="top-right" />
 
-      {/* Sticky top bar */}
       <div className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
         <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-yellow-400 to-red-600 bg-clip-text text-transparent relative">
           Admin Approvals
           {pendingCount > 0 && (
-            <span className="absolute -top-2 -right-10 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full shadow-lg">
+            <span className="absolute -top-2 -right-10 inline-flex items-center justify-center px-2 py-1 text-xs font-bold text-white bg-red-600 rounded-full shadow-lg">
               {pendingCount}
             </span>
           )}
@@ -132,6 +140,7 @@ export default function AdminApprovals() {
               >
                 Status: {status}
               </p>
+
               {link && (
                 <a
                   href={link}
@@ -142,6 +151,7 @@ export default function AdminApprovals() {
                   View on X →
                 </a>
               )}
+
               <div className="flex justify-between mt-4">
                 {status !== "approved" && (
                   <button
@@ -151,6 +161,7 @@ export default function AdminApprovals() {
                     Approve
                   </button>
                 )}
+
                 <button
                   onClick={() => rejectContent(id)}
                   className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-md transition-all"
