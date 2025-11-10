@@ -1,8 +1,11 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
+
+const ADMIN_UID = "2l6mIc47KkQ0OwjfudAN60UbFNe2"; // <-- your admin UID
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setIsAdmin(!!user);
+      setIsAdmin(!!user && user.uid === ADMIN_UID);
     });
     return () => unsubscribe();
   }, []);
@@ -39,7 +42,7 @@ export default function Navbar() {
     "Post Announcement",
   ];
 
-  const allItems = [...navItems, ...adminItems];
+  const allItems = [...navItems, ...(isAdmin ? adminItems : [])];
   const sortedItems = allItems.sort(
     (a, b) => customOrder.indexOf(a.name) - customOrder.indexOf(b.name)
   );
@@ -47,9 +50,9 @@ export default function Navbar() {
   const desktopNavItems = sortedItems.filter((item) =>
     navItems.some((n) => n.name === item.name)
   );
-  const desktopAdminItems = sortedItems.filter((item) =>
-    adminItems.some((n) => n.name === item.name)
-  );
+  const desktopAdminItems = isAdmin
+    ? sortedItems.filter((item) => adminItems.some((n) => n.name === item.name))
+    : [];
 
   const toggleMenu = () => {
     if (open) {
@@ -65,14 +68,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed w-full z-50">
-      {/* 🌈 Soft Halo Glow */}
+      {/* Soft Halo Glow */}
       <div className="absolute inset-0 h-full blur-xl opacity-40 bg-gradient-to-r from-[#0c6be4] via-[#4e9bfa] to-[#0007b7] pointer-events-none"></div>
 
       {/* Navbar Background */}
       <div className="relative bg-gradient-to-r from-[#0c6be4]/80 via-[#4e9bfa]/80 to-[#0007b7]/80 backdrop-blur-lg shadow-[0_4px_20px_rgba(12,107,228,0.4)] border-b border-white/10">
         <nav className="flex justify-between items-center px-3 md:px-6 py-1 font-medium">
           
-          {/* ✅ Logo / Brand */}
+          {/* Logo / Brand */}
           <Link to="/" className="flex items-center space-x-2">
             <img
               src="/images/logo/logo.webp"
@@ -84,7 +87,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* ✅ Desktop Menu */}
+          {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-6 lg:space-x-9 justify-end ml-auto">
             {desktopNavItems.map(({ name, path }) => (
               <li key={name} className="relative group">
@@ -114,7 +117,7 @@ export default function Navbar() {
               ))}
           </ul>
 
-          {/* ✅ Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden z-50 text-black"
             onClick={toggleMenu}
@@ -123,37 +126,29 @@ export default function Navbar() {
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* ✅ Mobile Dropdown */}
+          {/* Mobile Dropdown */}
           {(open || closing) && (
             <ul
-              className={`absolute top-full right-2 mt-1 flex flex-col items-end space-y-0.5 z-40 p-1 w-36 rounded-lg bg-transparent backdrop-blur-none transition-all duration-300
+              className={`absolute top-full right-2 mt-1 flex flex-col items-end space-y-0.5 z-40 p-1 w-44 rounded-lg bg-transparent backdrop-blur-none transition-all duration-300
                 ${open && !closing ? "animate-fadeInDown" : "animate-fadeOutUp"}`}
             >
-              {sortedItems
-                .filter((item) => {
-                  const adminNames = ["Admin Approvals", "Post Announcement"];
-                  if (adminNames.includes(item.name)) {
-                    return isAdmin;
-                  }
-                  return true;
-                })
-                .map(({ name, path }) => (
-                  <li key={name}>
-                    <Link
-                      to={path}
-                      onClick={handleLinkClick}
-                      className="w-full text-right block font-semibold text-black hover:text-[#e23e57] transition-colors px-1 py-0.5"
-                    >
-                      {name}
-                    </Link>
-                  </li>
-                ))}
+              {sortedItems.map(({ name, path }) => (
+                <li key={name}>
+                  <Link
+                    to={path}
+                    onClick={handleLinkClick}
+                    className="w-full text-right block font-semibold text-black hover:text-[#e23e57] transition-colors px-1 py-0.5"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           )}
         </nav>
       </div>
 
-      {/* ✅ Animations */}
+      {/* Animations */}
       <style>{`
         @keyframes fadeInDown {
           0% { opacity: 0; transform: translateY(-10px); }

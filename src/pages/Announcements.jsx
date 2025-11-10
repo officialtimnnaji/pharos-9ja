@@ -40,7 +40,7 @@ export default function Announcements() {
   };
 
   // ✅ Replace this with your actual admin UID(s)
-  const adminUIDs = ["YOUR_ADMIN_UID_HERE"];
+  const adminUIDs = ["2l6mIc47KkQ0OwjfudAN60UbFNe2"];
 
   if (loading) {
     return (

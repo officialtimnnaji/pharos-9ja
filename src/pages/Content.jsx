@@ -1,4 +1,4 @@
-// ✅ FULL FIXED CONTENT.JSX
+// src/pages/Content.jsx
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -7,23 +7,18 @@ import {
   serverTimestamp,
   query,
   orderBy,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
-import { db, auth } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { db } from "../firebase";
 
 export default function Content() {
   const [posts, setPosts] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({ name: "", title: "", link: "" });
-  const [currentUser, setCurrentUser] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    title: "",
+    link: "",
+  });
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => setCurrentUser(u || null));
-    return () => unsub();
-  }, []);
 
   useEffect(() => {
     const q = query(collection(db, "communityContent"), orderBy("timestamp", "desc"));
@@ -36,13 +31,6 @@ export default function Content() {
     });
     return () => unsub();
   }, []);
-
-  const adminUIDs = ["2l6mIc47KkQ0OwjfudAN60UbFNe2"];
-
-  const deletePost = async (id) => {
-    if (!window.confirm("Delete this post?")) return;
-    await deleteDoc(doc(db, "communityContent", id));
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,29 +75,24 @@ export default function Content() {
                 : "Unknown date"}
             </p>
 
-            <a
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-20 text-[#4e9bfa] hover:text-[#6b0f1a] font-semibold"
-            >
-              View on X →
-            </a>
-
-            {currentUser && adminUIDs.includes(currentUser.uid) && (
-              <button
-                onClick={() => deletePost(post.id)}
-                className="mt-4 bg-[#6b0f1a] text-white px-4 py-1 rounded hover:bg-[#4e0009]"
+            {/* Clickable link */}
+            {post.link && (
+              <a
+                href={post.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-20 text-[#4e9bfa] hover:text-[#6b0f1a] font-semibold"
               >
-                Delete
-              </button>
+                View on X →
+              </a>
             )}
 
+            {/* Decorative hover overlay that DOESN'T block clicks */}
             <div
               className="absolute inset-0 opacity-0 pointer-events-none
               group-hover:opacity-20 bg-gradient-to-br 
-              from-[#6b0f1a]/40 to-[#4e9bfa]/40 transition-opacity duration-300"
-            />
+              from-[#6b0f1a]/40 to-[#4e9bfa]/40 transition-opacity duration-300">
+            </div>
           </div>
         ))}
       </div>
@@ -120,17 +103,16 @@ export default function Content() {
           onClick={() => setShowForm(true)}
           className="bg-gradient-to-r from-[#6b0f1a] via-[#4e9bfa] to-[#6b0f1a]
                      text-white font-semibold px-8 py-3 rounded-full shadow-lg
-                     hover:scale-105 transition-transform"
+                     hover:scale-105 transition-transform duration-300"
         >
           ✨ Share Your Content
         </button>
       </div>
 
-      {/* ✅ FIXED MODAL */}
+      {/* Modal Form */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-[9000]">
-          <div className="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-xl w-96 relative border border-[#6b0f1a]/30 z-[10000]">
-
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-xl w-96 relative border border-[#6b0f1a]/30">
             <button
               onClick={() => setShowForm(false)}
               className="absolute top-3 right-3 text-[#6b0f1a] font-bold text-xl"
@@ -146,7 +128,9 @@ export default function Content() {
               <input
                 name="name"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 required
                 placeholder="Your Name"
                 className="w-full p-3 rounded-lg border border-[#6b0f1a]/40"
@@ -155,7 +139,9 @@ export default function Content() {
               <input
                 name="title"
                 value={formData.title}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, title: e.target.value })
+                }
                 required
                 placeholder="Post Title"
                 className="w-full p-3 rounded-lg border border-[#6b0f1a]/40"
@@ -164,7 +150,9 @@ export default function Content() {
               <input
                 name="link"
                 value={formData.link}
-                onChange={(e) => setFormData({ ...formData, link: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, link: e.target.value })
+                }
                 placeholder="Optional X Link"
                 className="w-full p-3 rounded-lg border border-[#6b0f1a]/40"
               />
