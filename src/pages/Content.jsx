@@ -37,7 +37,7 @@ export default function Content() {
     return () => unsub();
   }, []);
 
-  const adminUIDs = ["OyamnBWdiFhTNcrZvey1qYRnoWv2"];
+  const adminUIDs = ["2l6mIc47KkQ0OwjfudAN60UbFNe2"];
 
   const deletePost = async (id) => {
     if (!window.confirm("Delete this post?")) return;
