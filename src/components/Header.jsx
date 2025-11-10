@@ -1,3 +1,4 @@
+// header.jsx
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -6,7 +7,7 @@ export default function Header() {
     { name: "Home", path: "/" },
     { name: "Community", path: "/community" },
     { name: "Events", path: "/events" },
-    { name: "Members", path: "/members" },
+    // ✅ REMOVED Members (that page no longer exists)
   ];
 
   return (
@@ -15,11 +16,11 @@ export default function Header() {
         <Link to="/" className="flex items-center gap-2">
           <img
             src="/images/pharos-logo.png"
-            alt="Pharos Nigeria"
+            alt="Pharos logo"
             className="w-8 h-8"
           />
           <span className="text-xl font-bold text-pharosGreen">
-            Pharos 9ja
+            Pharos Connect
           </span>
         </Link>
 

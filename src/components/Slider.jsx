@@ -34,8 +34,15 @@ export default function Slider() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white px-6">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-4">{slide.title}</h2>
-                  <p className="text-lg md:text-2xl">{slide.subtitle}</p>
+                 
+ <h2 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+  {slide.title}
+</h2>
+<p className="mt-2 text-lg md:text-xl text-[#f8e3cc] drop-shadow-md">
+  {slide.subtitle}
+</p>
+
+
                 </div>
               </motion.div>
             )

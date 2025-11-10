@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "title": "Welcome to Pharos Nigeria",
-    "subtitle": "Unlocking Nigeria's Role in the Future of Defi & Real-World Assets Finance", 
+    "title": "Welcome to Pharos Connect",
+    "subtitle": "Connect, share and stay updated on all things Pharos", 
     "image": "/images/slider/slide1.jpg"
   },
   {
     "id": 2,
     "title": "Building Real-World Assets",
     "subtitle": "Exploring blockchain use cases in the real world",
-    "image": "/images/slider/slide2.jpg"
+    "image": "/images/slider/slide10.jpg"
   },
   {
     "id": 3,
@@ -18,36 +18,23 @@
     "image": "/images/slider/slide3.jpg"
   },
 
+  
   {
     "id": 4,
-    "title": "Happy Birthday Darkfallx",
-    "subtitle": "Celebrating our OG's special day!",
-    "image": "/images/slider/slide4.jpg"
-  },
-
-  {
-    "id": 5,
-    "title": "Happy Halloween",
-    "subtitle": "Spooktacular Savings Awaits!",
-    "image": "/images/slider/slide5.jpg"
-  },
-
-  {
-    "id": 6,
     "title": "Gocto Pika",
     "subtitle": "Find the Light  🌕🪸",
     "image": "/images/slider/slide6.jpg"
   },
   {
-    "id": 7,
+    "id": 5,
     "title": "Gocto Sailors",
     "subtitle": "A great day to touch grass!",
     "image": "/images/slider/slide7.jpg"
   },
   {
-    "id": 8,
+    "id": 6,
     "title": "Legendary CEO: Wish Longer",
-    
+    "subtitle": "A deep dive into the mind of a visionary leader",
     "image": "/images/slider/slide8.jpg"
   }
 ]

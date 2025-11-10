@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
   content: [
     "./index.html",
@@ -7,19 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        pharosGold: "#FFD700",       // Gold accent
-        pharosNavy: "#1A1A40",       // Dark blue/navy background
-        pharosBlue: "#3B82F6",       // For community leads
-        pharosPurple: "#8B5CF6",     // For OG members
-        pharosGreen: "#10B981",      // For contributors
-        pharosTeal: "#14B8A6",       // For upcoming events
+        primary: "#FF6B81",          // Fun pink/red
+        secondary: "#FFD6E0",        // Soft romantic
+        accent: "#FFB3C6",           // Highlight gradient
+        upcoming: "#14B8A6",
+        background: "#FFF5F8",       // Light background
+        "background-light": "#FFF0F4", // Light variant for sections
+        darkText: "#1F2937",         // Almost black text
       },
       boxShadow: {
         card: "0 4px 6px rgba(0,0,0,0.1)",
-        "card-hover": "0 8px 16px rgba(0,0,0,0.15)",
-      },
-      backgroundImage: {
-        "pharos-gradient": "linear-gradient(90deg, #1A1A40, #3B82F6)",
+        "card-hover": "0 8px 20px rgba(255,107,129,0.3)",
       },
     },
   },

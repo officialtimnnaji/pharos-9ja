@@ -1,28 +1,22 @@
 {
   "ongoing": [
-    {
-      "id": "1",
-      "title": "Happy Birthday Darkfallx",
-      "date": "5th November, 2025",
-      "time": "",
-      "host": "Darkfallx",
-      "guide": "We honor our Og Darkfallx on his special day! Join us in celebrating his contributions to the Pharos Nigeria Community"
-    }
-    
-  ],
+  {
+    "id": "1",
+    "title": "Week1 Pathfinder Campaign",
+    "date": "6-12th November, 2025",
+    "time": "",
+    "host": "Pharos Team",
+    "guide": "Make a 1-page guide or X thread that explains AquaFlux’s three tokens: P, C, & S and who they help.\n\nHow:\n1. Create the guide.\n2. Post it on X.\n3. Tag official Pharos Network and Aquaflux.\n4. Add #PharosPathfinders & #Week1 hashtags.\n5. Also post it in the Discord channel.\n\nRewards:\n• Top 10 go to a community vote.\n• 5 winners.\n• Top 3 each week get a special “Pathfinder” role, spotlight on Pharos, merch, and a chance to become Campaign Champion.\n\nGood luck!"
+  }
+],
+
+  
   "upcoming": [
+    
     {
       "id": 2,
-      "title": "GEOGUESSER",
-      "date": "Thursday, Nov 6, 2025",
-      "time": "6:00 PM WAT",
-      "host": "Man_consummate",
-      "guide": "A fun geography guessing game to test your knowledge of world locations."
-    },
-    {
-      "id": 3,
       "title": "Saturday X-Space",
-      "date": "Saturday, Nov 8, 2025",
+      "date": "Saturday, Nov 15, 2025",
       "time": "8:00 PM WAT",
       "host": "LuxuryNad",
       "guide": "Space for weekly updates, insights, and genuine connections."

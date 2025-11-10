@@ -1,39 +1,138 @@
 {
-  "leads": [
+  "officialTeam": [
     {
       "id": 1,
-      "name": "Luxury Nad",
-      "role": "Regional Moderator",
-      "image": "/images/members/luxurynad.jpg"
+      "name": "Alex Z",
+      "role": "CEO",
+      "image": "/images/members/alex.jpg",
+      "twitter": "https://x.com/HZ7102",
+      "bio": "CEO of Pharos Network"
     },
+
     {
       "id": 2,
-      "name": "Crypto Tiger",
-      "role": "Regional Moderator",
-      "image": "/images/members/cryptotiger.jpg"
-    }
-  ],
-  "ogs": [
+      "name": "Wishlonger",
+      "role": "CEO & Co-Founder",
+      "image": "/images/members/wishlonger.jpg",
+      "twitter": "https://x.com/wishlonger",
+      "bio": "CEO & Co-Founder of Pharos Network"
+    },
+
     {
       "id": 3,
-      "name": "Secgen",
-      "role": "OG",
-      "image": "/images/members/secgen.jpg"
+      "name": "Michelle",
+      "role": "CMO",
+      "image": "/images/members/michelle.jpg",
+      "twitter": "https://x.com/michellek_web3",
+      "bio": "CMO of Pharos Network. 9+ years in the industry. Crypto marketing pro."
     },
 
     {
       "id": 4,
-      "name": "Darkfallx",
-      "role": "OG",
-      "image": "/images/members/darkfallx.jpg"
+      "name": "Janesh",
+      "role": "DevRel Lead",
+      "image": "/images/members/janesh.jpg",
+      "twitter": "https://x.com/janesh_dani",
+      "bio": "Lead DevRel & Solutions Engineer at Pharos Network"
     },
 
     {
-    "id": 5,
-    "name": "Shock4Wave",
-    "role": "OG",
-    "image": "/images/members/shock4wave.jpg"
-  }
+      "id": 5,
+      "name": "Pika",
+      "role": "Community Team",
+      "image": "/images/members/pika.jpg",
+      "twitter": "https://x.com/0xJayZ",
+      "bio": "Community Team at Pharos Network "
+    },
+
+
+
+    {
+      "id": 6,
+      "name": "Mush",
+      "role": "Community Lead",
+      "image": "/images/members/mush.jpg",
+      "twitter": "https://x.com/ironsidecrypto",
+      "bio": "Community Lead at Pharos Network"
+    }
+
+  ],
+
+
+
+  "moderators": [],
+
+
+  "regionalModerators": [
+    {
+      "id": 7,
+      "name": "Luxury Nad",
+      "role": "Regional Moderator",
+      "image": "/images/members/luxurynad.jpg",
+      "twitter": "https://x.com/luxurynad",
+      "bio": "Community growth expert | Regional Lead at Pharos Network"
+    },
+
+    {
+      "id": 8,
+      "name": "Crypto Tiger",
+      "role": "Regional Moderator",
+      "image": "/images/members/cryptotiger.jpg",
+      "twitter": "https://x.com/Cryptottiger",
+      "bio": "Crypto enthusiast | Rapper | Civil engineer | Regional Mod at Pharos Network"
+    }
+  ],
+
+
+
+  "underwaterMonsters": [
+    {
+      "id": 9,
+      "name": "Tim",
+      "role": "Underwater Monster",
+      "image": "/images/members/tim.jpg",
+      "twitter": "https://x.com/ohmytimmm",
+      "bio": "Chief at Pharos Network."
+    },
+    {
+      "id": 10,
+      "name": "AVZ",
+      "role": "Underwater Monster",
+      "image": "/images/members/avz.jpg",
+      "twitter": "https://x.com/avzcrypto",
+      "bio": "Web3 Writer & Builder | Believe in Pharos Network / Building Coraluna ."
+    }
+
+
+
+  ],
+  "ogs": [
+    {
+      "id": 11,
+      "name": "Secgen",
+      "role": "OG",
+      "image": "/images/members/secgen.jpg",
+      "twitter": "https://x.com/De_secgen",
+      "bio": ""
+    },
+
+    {
+      "id": 12,
+      "name": "Darkfallx",
+      "role": "OG",
+      "image": "/images/members/darkfallx.jpg",
+      "twitter": "https://x.com/Darkfall_x",
+      "bio": ""
+    },
+
+    {
+      "id": 13,
+      "name": "Shock4Wave",
+      "role": "OG",
+      "image": "/images/members/shock4wave.jpg",
+      "twitter": "https://x.com/shock4wave",
+      "bio": ""
+    }
 
 
 
@@ -41,24 +140,82 @@
   ],
   "contributors": [
     {
-      "id": 6,
-      "name": "Geetee",
-      "role": "Regional contributor",
-      "image": "/images/members/geetee.jpg"
+      "id": 14,
+      "name": "001ofPharos",
+      "role": "Contributor",
+      "image": "/images/members/001ofpharos.jpg",
+      "twitter": "https://x.com/001ofPharos",
+
+      "bio": ""
     },
 
+
     {
-      "id": 7,
+      "id": 15,
       "name": "BigNelson",
-      "role": "Regional contributor",
-      "image": "/images/members/bignelson.jpg"
-    },
-    {
-      "id": 8,
-      "name": "001ofPharos",
-      "role": "Regional contributor",
-      "image": "/images/members/001ofpharos.jpg"
+      "role": "Contributor",
+      "image": "/images/members/bignelson.jpg",
+      "twitter": "https://x.com/BigNelson",
+      "bio": ""
     }
 
+
+
+  ],
+  "storytellers": [
+    {
+      "id": 16,
+      "name": "Pnektar",
+      "role": "Storyteller",
+      "image": "/images/members/pnektar.jpg",
+      "twitter": "https://x.com/Franex20",
+      "bio": ""
+    },
+
+    {
+      "id": 17,
+      "name": "Damibabs",
+      "role": "Storyteller",
+      "image": "/images/members/damibabs.jpg",
+      "twitter": "https://x.com/DamibabsT",
+      "bio": ""
+    },
+    {
+      "id": 18,
+      "name": "Briamach",
+      "role": "Storyteller",
+      "image": "/images/members/briamach.jpg",
+      "twitter": "https://x.com/briamach",
+      "bio": ""
+    }
+
+
+  ],
+  "communityMembers": [
+    {
+      "id": 19,
+      "name": "Perp",
+      "role": "Community Member",
+      "image": "/images/members/perp.jpg",
+      "twitter": "https://x.com/Perp_338",
+      "bio": ""
+    },
+    {
+      "id": 20,
+      "name": "Philomin",
+      "role": "Community Member",
+      "image": "/images/members/philomin.jpg",
+      "twitter": "https://x.com/PhilominaAntho1",
+      "bio": "HR Generalist | Content creator |  Pharos Believer"
+    },
+
+    {
+      "id": 21,
+      "name": "Ratking",
+      "role": "Community Member",
+      "image": "/images/members/ratking.jpg",
+      "twitter": "https://x.com/favour7814?",
+      "bio": ""
+    }
   ]
 }

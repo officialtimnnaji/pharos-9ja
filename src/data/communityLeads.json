@@ -2,29 +2,60 @@
   "regionalModerators": [
     {
       "id": 1,
-      "name": "Luxury Nad",
-      "role": "Regional Moderator",
-      "image": "/images/members/luxurynad.jpg"
+      "name": "Pika",
+      "role": "Community Team",
+      "image": "/images/members/pika.jpg"
     },
     {
       "id": 2,
-      "name": "Crypto Tiger",
-      "role": "Regional Moderator",
-      "image": "/images/members/cryptotiger.jpg"
-    }
-  ],
-  "ogs": [
+      "name": "Mush",
+      "role": "Community Lead",
+      "image": "/images/members/mush.jpg"
+    },
+
     {
       "id": 3,
-      "name": "Secgen",
-      "role": "OG",
-      "image": "/images/members/secgen.jpg"
+      "name": "Intern",
+      "role": "Pharos Intern",
+      "image": "/images/members/intern.jpg"
     },
+
     {
       "id": 4,
-      "name": "Darkfallx",
-      "role": "OG",
-      "image": "/images/members/darkfallx.jpg"
+      "name": "Lumin",
+      "role": "Sea Keeper",
+      "image": "/images/members/lumin.jpg"
+    },
+
+
+    {
+      "id": 5,
+      "name": "Suka",
+      "role": "Sea Keeper",
+      "image": "/images/members/suka.jpg"
     }
+
+    
+  ],
+
+
+
+  "ogs": [
+
+    {
+      "id": 6,
+      "name": "LuxuryNad",
+      "role": "Regional Mod",
+      "image": "/images/members/luxurynad.jpg"
+    },
+
+    {
+      "id": 7,
+      "name": "Crypto Tiger",
+      "role": "Regional Mod",
+      "image": "/images/members/cryptotiger.jpg"
+    }
+
+    
   ]
 }
