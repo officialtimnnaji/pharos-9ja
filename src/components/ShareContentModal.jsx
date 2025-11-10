@@ -33,7 +33,6 @@ export default function ShareContentModal({ open, onClose }) {
         timestamp: serverTimestamp(),
       });
 
-      // ✅ Success animation trigger
       setSuccess(true);
       setForm({ name: "", title: "", link: "" });
 
@@ -51,10 +50,11 @@ export default function ShareContentModal({ open, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4">
-      {/* ✅ Backdrop */}
+
+      {/* ✅ FIXED: Backdrop z-index */}
       <div
         onClick={onClose}
-        className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn"
+        className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn z-[9000]"
       />
 
       {/* ✅ Modal Wrapper */}
@@ -65,9 +65,6 @@ export default function ShareContentModal({ open, onClose }) {
         {/* ✅ Glass Card */}
         <div className="rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 p-6 shadow-2xl relative overflow-hidden">
 
-          {/* ✅ Glow Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
-
           {/* ✅ Close Button */}
           <button
             onClick={onClose}
@@ -76,7 +73,7 @@ export default function ShareContentModal({ open, onClose }) {
             ✕
           </button>
 
-          {/* ✅ Success Animation */}
+          {/* ✅ Success Page */}
           {success ? (
             <div className="flex flex-col items-center justify-center py-16 animate-fadeIn">
               <div className="relative">
@@ -92,19 +89,17 @@ export default function ShareContentModal({ open, onClose }) {
             </div>
           ) : (
             <>
-              {/* Header */}
-              <h3 className="text-2xl font-bold text-yellow-300 mb-4 drop-shadow-lg">
+              <h3 className="text-2xl font-bold text-yellow-300 mb-4">
                 Share Your Content
               </h3>
 
-              {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Your name / X handle"
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white"
                 />
 
                 <input
@@ -112,24 +107,23 @@ export default function ShareContentModal({ open, onClose }) {
                   value={form.title}
                   onChange={handleChange}
                   placeholder="Short title / caption"
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white"
                 />
 
                 <input
                   name="link"
                   value={form.link}
                   onChange={handleChange}
-                  placeholder="X / Twitter link (https://x.com/...)"
                   type="url"
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  placeholder="X / Twitter link (https://x.com/...)"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white"
                 />
 
-                {/* Buttons */}
                 <div className="flex justify-between items-center pt-2">
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="bg-gradient-to-r from-red-700 via-red-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform"
+                    className="bg-gradient-to-r from-red-700 via-red-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:scale-105"
                   >
                     {submitting ? "Submitting..." : "Submit"}
                   </button>
@@ -142,10 +136,6 @@ export default function ShareContentModal({ open, onClose }) {
                     Cancel
                   </button>
                 </div>
-
-                <p className="text-xs text-gray-300">
-                  Submissions are reviewed by admins. Approved posts appear on the content page.
-                </p>
               </form>
             </>
           )}
@@ -158,25 +148,19 @@ export default function ShareContentModal({ open, onClose }) {
           0% { transform: scale(0.85); opacity: 0; }
           100% { transform: scale(1); opacity: 1; }
         }
-        .animate-popIn {
-          animation: popIn 0.25s ease-out forwards;
-        }
+        .animate-popIn { animation: popIn 0.25s ease-out forwards; }
 
         @keyframes fadeIn {
           0% { opacity: 0; }
           100% { opacity: 1; }
         }
-        .animate-fadeIn {
-          animation: fadeIn 0.4s ease-out forwards;
-        }
+        .animate-fadeIn { animation: fadeIn 0.4s ease-out forwards; }
 
         @keyframes scaleIn {
           0% { transform: scale(0.4); }
           100% { transform: scale(1); }
         }
-        .animate-scaleIn {
-          animation: scaleIn 0.3s ease-out forwards;
-        }
+        .animate-scaleIn { animation: scaleIn 0.3s ease-out forwards; }
       `}</style>
     </div>
   );
