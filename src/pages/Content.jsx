@@ -41,7 +41,7 @@ export default function Content() {
     return () => unsub();
   }, []);
 
-  const adminUIDs = ["YOUR_ADMIN_UID_HERE"];
+  const adminUIDs = ["OyamnBWdiFhTNcrZvey1qYRnoWv2"]; // ✅ Updated
 
   const deletePost = async (id) => {
     if (!window.confirm("Delete this post?")) return;
@@ -51,11 +51,13 @@ export default function Content() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     await addDoc(collection(db, "communityContent"), {
       ...formData,
       status: "pending",
       timestamp: serverTimestamp(),
     });
+
     setLoading(false);
     setFormData({ name: "", title: "", link: "" });
     setShowForm(false);
@@ -76,7 +78,7 @@ export default function Content() {
             key={post.id}
             className="relative bg-white/50 backdrop-blur-md border 
             border-[#6b0f1a]/30 rounded-2xl shadow-md overflow-hidden p-6 
-            transition-transform hover:-translate-y-2 hover:shadow-xl"
+            transition-transform hover:-translate-y-2 hover:shadow-xl group"
           >
             <h3 className="text-2xl font-semibold text-[#6b0f1a] mb-2">
               {post.title}
@@ -89,11 +91,13 @@ export default function Content() {
                 : "Unknown date"}
             </p>
 
+            {/* ✅ FIXED — clickable link */}
             {post.link && (
               <a
                 href={post.link}
                 target="_blank"
-                className="text-[#4e9bfa] hover:text-[#6b0f1a] font-semibold"
+                rel="noopener noreferrer"
+                className="relative z-20 text-[#4e9bfa] hover:text-[#6b0f1a] font-semibold"
               >
                 View on X →
               </a>
@@ -108,9 +112,12 @@ export default function Content() {
               </button>
             )}
 
-            <div className="absolute inset-0 opacity-0 
-            hover:opacity-20 bg-gradient-to-br 
-            from-[#6b0f1a]/40 to-[#4e9bfa]/40 transition-opacity duration-300"></div>
+            {/* ✅ FIXED overlay — now it won't block clicks */}
+            <div
+              className="absolute inset-0 opacity-0 pointer-events-none
+              group-hover:opacity-20 bg-gradient-to-br 
+              from-[#6b0f1a]/40 to-[#4e9bfa]/40 transition-opacity duration-300">
+            </div>
           </div>
         ))}
       </div>

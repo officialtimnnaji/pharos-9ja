@@ -129,17 +129,25 @@ export default function Navbar() {
               className={`absolute top-full right-2 mt-1 flex flex-col items-end space-y-0.5 z-40 p-1 w-36 rounded-lg bg-transparent backdrop-blur-none transition-all duration-300
                 ${open && !closing ? "animate-fadeInDown" : "animate-fadeOutUp"}`}
             >
-              {sortedItems.map(({ name, path }) => (
-                <li key={name}>
-                  <Link
-                    to={path}
-                    onClick={handleLinkClick}
-                    className="w-full text-right block font-semibold text-black hover:text-[#e23e57] transition-colors px-1 py-0.5"
-                  >
-                    {name}
-                  </Link>
-                </li>
-              ))}
+              {sortedItems
+                .filter((item) => {
+                  const adminNames = ["Admin Approvals", "Post Announcement"];
+                  if (adminNames.includes(item.name)) {
+                    return isAdmin;
+                  }
+                  return true;
+                })
+                .map(({ name, path }) => (
+                  <li key={name}>
+                    <Link
+                      to={path}
+                      onClick={handleLinkClick}
+                      className="w-full text-right block font-semibold text-black hover:text-[#e23e57] transition-colors px-1 py-0.5"
+                    >
+                      {name}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           )}
         </nav>
