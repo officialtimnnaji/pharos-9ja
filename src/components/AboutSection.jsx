@@ -73,7 +73,7 @@ export default function AboutSection() {
           the fastest Layer-1 solution for Real World Asset finance and cross-chain
           liquidity. By creating a unified space where everyone can stay updated,
           engage, and grow together, Pharos Connect empowers the community to lead
-          innovation and collaboration within the local andglobal Pharos ecosystem.
+          innovation and collaboration within the local and global Pharos ecosystem.
         </motion.p>
       </div>
     </section>
