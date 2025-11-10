@@ -1,40 +1,47 @@
 [
+
   {
     "id": 1,
+    "title": "Pharos Nigeria Weekly Events",
+    "subtitle": "Connect, have fun and learn with other community members", 
+    "image": "/images/slider/slide11.jpg"
+  },
+  {
+    "id": 2,
     "title": "Welcome to Pharos Connect",
     "subtitle": "Connect, share and stay updated on all things Pharos", 
     "image": "/images/slider/slide1.jpg"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Building Real-World Assets",
     "subtitle": "Exploring blockchain use cases in the real world",
     "image": "/images/slider/slide10.jpg"
   },
   {
-    "id": 3,
-    "title": "Join Our Community",
-    "subtitle": "Connect, learn, and grow with other builders",
+    "id": 4,
+    "title": "Explore Pharos Atlantic Testnet Today",
+    "subtitle": "",
     "image": "/images/slider/slide3.jpg"
   },
 
   
   {
-    "id": 4,
-    "title": "Gocto Pika",
+    "id": 5,
+    "title": "",
     "subtitle": "Find the Light  🌕🪸",
     "image": "/images/slider/slide6.jpg"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Gocto Sailors",
     "subtitle": "A great day to touch grass!",
     "image": "/images/slider/slide7.jpg"
   },
   {
-    "id": 6,
-    "title": "Legendary CEO: Wish Longer",
-    "subtitle": "A deep dive into the mind of a visionary leader",
+    "id": 7,
+    "title": "",
+    "subtitle": "Legendary CEO: Wish Longer",
     "image": "/images/slider/slide8.jpg"
   }
 ]

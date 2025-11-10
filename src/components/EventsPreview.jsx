@@ -5,6 +5,8 @@ import jsonEvents from "../data/events.json";
 export default function EventsPreview() {
   // ✅ 1. Your hard-coded Ongoing Event
   const hardcodedOngoing = [
+    
+  
     {
       id: "hardcoded-1",
       title: "Week1 Pathfinder Campaign",

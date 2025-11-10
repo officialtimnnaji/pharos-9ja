@@ -3,7 +3,15 @@
 
   
   "upcoming": [
-    
+    {
+      "id": 1,
+      "title": "FOON-0 Game",
+      "date": "Monday, Nov 10, 2025",
+      "time": "6:00 PM WAT",
+      "host": "Shock4Wave",
+      "guide": "Live on Discord - Nigeria channel."
+    },
+
     {
       "id": 2,
       "title": "Saturday X-Space",
