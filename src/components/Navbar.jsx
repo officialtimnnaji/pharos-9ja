@@ -91,7 +91,7 @@ export default function Navbar() {
                 <Link
                   to={path}
                   onClick={handleLinkClick}
-                  className="text-[#f8e3cc] transition-colors duration-300 font-semibold group-hover:text-[#e23e57]"
+                  className="text-black transition-colors duration-300 font-semibold group-hover:text-[#e23e57]"
                 >
                   {name}
                 </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
                   <Link
                     to={path}
                     onClick={handleLinkClick}
-                    className="text-[#f8e3cc] transition-colors duration-300 font-semibold group-hover:text-[#e23e57]"
+                    className="text-black transition-colors duration-300 font-semibold group-hover:text-[#e23e57]"
                   >
                     {name}
                   </Link>
@@ -116,7 +116,7 @@ export default function Navbar() {
 
           {/* ✅ Mobile Menu Button */}
           <button
-            className="md:hidden z-50 text-[#f8e3cc]"
+            className="md:hidden z-50 text-black"
             onClick={toggleMenu}
             aria-label="Toggle Menu"
           >
@@ -134,7 +134,7 @@ export default function Navbar() {
                   <Link
                     to={path}
                     onClick={handleLinkClick}
-                    className="w-full text-right block font-semibold text-[#f8e3cc] hover:text-[#e23e57] transition-colors px-1 py-0.5"
+                    className="w-full text-right block font-semibold text-black hover:text-[#e23e57] transition-colors px-1 py-0.5"
                   >
                     {name}
                   </Link>
