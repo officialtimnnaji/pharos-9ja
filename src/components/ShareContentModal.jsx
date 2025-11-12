@@ -25,7 +25,6 @@ export default function ShareContentModal({ open, onClose }) {
       }
 
       await addDoc(collection(db, "communityContent"), {
-        ...form,
         name: form.name.trim(),
         title: form.title.trim(),
         link: form.link.trim(),
@@ -51,21 +50,19 @@ export default function ShareContentModal({ open, onClose }) {
   return (
     <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4">
 
-      {/* ✅ FIXED: Backdrop z-index */}
+      {/* Backdrop */}
       <div
         onClick={onClose}
         className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn z-[9000]"
       />
 
-      {/* ✅ Modal Wrapper */}
+      {/* Modal */}
       <div
         onClick={(e) => e.stopPropagation()}
         className="relative z-[10000] w-full max-w-xl rounded-2xl p-[2px] bg-gradient-to-br from-red-800/40 via-yellow-400/40 to-red-600/40 shadow-xl animate-popIn"
       >
-        {/* ✅ Glass Card */}
         <div className="rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 p-6 shadow-2xl relative overflow-hidden">
 
-          {/* ✅ Close Button */}
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-white hover:text-yellow-300 text-xl"
@@ -73,7 +70,6 @@ export default function ShareContentModal({ open, onClose }) {
             ✕
           </button>
 
-          {/* ✅ Success Page */}
           {success ? (
             <div className="flex flex-col items-center justify-center py-16 animate-fadeIn">
               <div className="relative">
@@ -141,27 +137,6 @@ export default function ShareContentModal({ open, onClose }) {
           )}
         </div>
       </div>
-
-      {/* ✅ Animations */}
-      <style>{`
-        @keyframes popIn {
-          0% { transform: scale(0.85); opacity: 0; }
-          100% { transform: scale(1); opacity: 1; }
-        }
-        .animate-popIn { animation: popIn 0.25s ease-out forwards; }
-
-        @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        .animate-fadeIn { animation: fadeIn 0.4s ease-out forwards; }
-
-        @keyframes scaleIn {
-          0% { transform: scale(0.4); }
-          100% { transform: scale(1); }
-        }
-        .animate-scaleIn { animation: scaleIn 0.3s ease-out forwards; }
-      `}</style>
     </div>
   );
 }

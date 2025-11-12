@@ -20,8 +20,10 @@ export default function Content() {
   });
   const [loading, setLoading] = useState(false);
 
+  // ✅ Fetch only APPROVED content
   useEffect(() => {
     const q = query(collection(db, "communityContent"), orderBy("timestamp", "desc"));
+
     const unsub = onSnapshot(q, (snapshot) => {
       setPosts(
         snapshot.docs
@@ -29,15 +31,19 @@ export default function Content() {
           .filter((p) => p.status === "approved")
       );
     });
+
     return () => unsub();
   }, []);
 
+  // ✅ Submit new content (pending)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     await addDoc(collection(db, "communityContent"), {
-      ...formData,
+      name: formData.name.trim(),
+      title: formData.title.trim(),
+      link: formData.link.trim() || "",
       status: "pending",
       timestamp: serverTimestamp(),
     });
@@ -55,7 +61,7 @@ export default function Content() {
         Community Content
       </h2>
 
-      {/* Content Cards */}
+      {/* Approved Content Cards */}
       <div className="max-w-4xl mx-auto space-y-8">
         {posts.map((post) => (
           <div
@@ -75,7 +81,6 @@ export default function Content() {
                 : "Unknown date"}
             </p>
 
-            {/* Clickable link */}
             {post.link && (
               <a
                 href={post.link}
@@ -87,7 +92,6 @@ export default function Content() {
               </a>
             )}
 
-            {/* Decorative hover overlay that DOESN'T block clicks */}
             <div
               className="absolute inset-0 opacity-0 pointer-events-none
               group-hover:opacity-20 bg-gradient-to-br 
