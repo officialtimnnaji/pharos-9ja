@@ -7,6 +7,7 @@ import {
   serverTimestamp,
   query,
   orderBy,
+  where, // ✅ Added this import
 } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -20,9 +21,14 @@ export default function Content() {
   });
   const [loading, setLoading] = useState(false);
 
-  // ✅ Fetch only APPROVED content
+  // ✅ Fetch only APPROVED content safely
   useEffect(() => {
-    const q = query(collection(db, "communityContent"), orderBy("timestamp", "desc"));
+    // ✅ Only fetch docs that have a timestamp to avoid Firestore permission errors
+    const q = query(
+      collection(db, "communityContent"),
+      where("timestamp", "!=", null),
+      orderBy("timestamp", "desc")
+    );
 
     const unsub = onSnapshot(q, (snapshot) => {
       setPosts(
@@ -45,7 +51,7 @@ export default function Content() {
       title: formData.title.trim(),
       link: formData.link.trim() || "",
       status: "pending",
-      timestamp: serverTimestamp(),
+      timestamp: serverTimestamp(), // ✅ Ensures every new doc has timestamp
     });
 
     setLoading(false);
@@ -55,9 +61,11 @@ export default function Content() {
 
   return (
     <section className="min-h-screen px-6 md:px-16 py-20 bg-[#f8e3cc] text-[#1a1a1a]">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 
+      <h2
+        className="text-4xl md:text-5xl font-bold text-center mb-12 
         bg-gradient-to-r from-[#6b0f1a] via-[#4e9bfa] to-[#6b0f1a]
-        bg-clip-text text-transparent">
+        bg-clip-text text-transparent"
+      >
         Community Content
       </h2>
 
@@ -95,8 +103,8 @@ export default function Content() {
             <div
               className="absolute inset-0 opacity-0 pointer-events-none
               group-hover:opacity-20 bg-gradient-to-br 
-              from-[#6b0f1a]/40 to-[#4e9bfa]/40 transition-opacity duration-300">
-            </div>
+              from-[#6b0f1a]/40 to-[#4e9bfa]/40 transition-opacity duration-300"
+            ></div>
           </div>
         ))}
       </div>
