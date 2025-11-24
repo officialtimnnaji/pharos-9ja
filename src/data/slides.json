@@ -8,6 +8,13 @@
 
   {
     "id": 2,
+    "title": "",
+   "subtitle": "", 
+    "image": "/images/slider/slide17.jpg"
+  },
+
+  {
+    "id": 3,
     "title": "Let's Pharos",
     "subtitle": "Pharos is the inclusive financial layer 1 for RealFi, wher real value & institutional grade assets are accessible to all.", 
     "image": "/images/slider/slide12.jpg"
@@ -15,13 +22,13 @@
   
 
   {
-    "id": 3,
+    "id": 4,
     "title": "Building Real-World Assets",
     "subtitle": "Exploring blockchain use cases in the real world",
     "image": "/images/slider/slide10.jpg"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Explore Pharos Atlantic Testnet Today",
     "subtitle": "",
     "image": "/images/slider/slide3.jpg"
@@ -29,14 +36,14 @@
 
 
   {
-    "id": 5,
+    "id": 6,
     "title": "",
     "subtitle": "Find the Light  🌕🪸",
     "image": "/images/slider/slide6.jpg"
   },
   
   {
-    "id": 6,
+    "id": 7,
     "title": "",
     "subtitle": "Legendary CEO: Wish Longer",
     "image": "/images/slider/slide8.jpg"
