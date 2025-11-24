@@ -1,16 +1,26 @@
 {
-  
+   "ongoing": [
+    
+    {
+      "id": 1,
+      "title": "Birthday Celebration",
+      "date": "Monday, Nov 24, 2025",
+      "time": "",
+      "host": "Briamach",
+      "guide": "Happy Birthday to Briamach! Wishing you a day filled with joy and love."
+    }
+  ],
 
   
   "upcoming": [
     
     {
       "id": 1,
-      "title": "Saturday X-Space",
-      "date": "Saturday, Nov 15, 2025",
+      "title": "Birthday Party X Space",
+      "date": "Monday, Nov 24, 2025",
       "time": "8:00 PM WAT",
       "host": "Pharos Nigeria 🇳🇬",
-      "guide": "Space for weekly updates, insights, and genuine connections."
+      "guide": "Join us in celebrating Briamach's birthday with fun activities, music, and great company! Don't miss out on the excitement."
     }
   ]
 }

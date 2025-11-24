@@ -1,46 +1,27 @@
 [
-
   {
     "id": 1,
+    "title": "",
+   "subtitle": "Join us in celebrating Briamach's special day!", 
+    "image": "/images/slider/slide18.jpg"
+  },
+
+  {
+    "id": 2,
     "title": "Let's Pharos",
     "subtitle": "Pharos is the inclusive financial layer 1 for RealFi, wher real value & institutional grade assets are accessible to all.", 
     "image": "/images/slider/slide12.jpg"
   },
-  {
-    "id": 2,
-    "title": "",
-   "subtitle": "Love from Pharos Nigeria🇳🇬🇳🇬🇳🇬 ", 
-    "image": "/images/slider/slide11.jpg"
-  },
+  
+
   {
     "id": 3,
-    "title": "",
-    "subtitle": "Pharos India Weekly Events", 
-    "image": "/images/slider/slide13.jpg"
-  },
-
-  {
-    "id": 4,
-    "title": "",
-    "subtitle": "Pharos Vietnam Weekly Events", 
-    "image": "/images/slider/slide14.jpg"
-  },
-
-  {
-    "id": 5,
-    "title": "",
-    "subtitle": "Pharos Indonesia Weekly Events", 
-    "image": "/images/slider/slide15.jpg"
-  },
-
-  {
-    "id": 6,
     "title": "Building Real-World Assets",
     "subtitle": "Exploring blockchain use cases in the real world",
     "image": "/images/slider/slide10.jpg"
   },
   {
-    "id": 7,
+    "id": 4,
     "title": "Explore Pharos Atlantic Testnet Today",
     "subtitle": "",
     "image": "/images/slider/slide3.jpg"
@@ -48,19 +29,14 @@
 
 
   {
-    "id": 8,
+    "id": 5,
     "title": "",
     "subtitle": "Find the Light  🌕🪸",
     "image": "/images/slider/slide6.jpg"
   },
+  
   {
-    "id": 9,
-    "title": "Gocto Sailors",
-    "subtitle": "A great day to touch grass!",
-    "image": "/images/slider/slide7.jpg"
-  },
-  {
-    "id": 10,
+    "id": 6,
     "title": "",
     "subtitle": "Legendary CEO: Wish Longer",
     "image": "/images/slider/slide8.jpg"

@@ -7,29 +7,14 @@ export default function EventsPreview() {
   const hardcodedOngoing = [
     
   
-    {
-      id: "hardcoded-1",
-      title: "Week1 Pathfinder Campaign",
-      date: "6–12th November, 2025",
+    /*{
+      id: "",
+      title: "",
+      date: "",
       time: "",
-      host: "Pharos Team",
-      guide: `
-Make a 1-page guide or X thread that explains AquaFlux’s three tokens: P, C & S and who they help.
-
-How:
-1. Create the guide.
-2. Post it on X.
-3. Tag official Pharos Network and Aquaflux.
-4. Add #PharosPathfinders & #Week1 hashtags.
-5. Also post it in the Discord channel.
-
-Rewards:
-• Top 10 go to a community vote.
-• 5 winners.
-• Top 3 each week get a special “Pathfinder” role, spotlight on Pharos, merch, and a chance to become Campaign Champion.
-
-Good luck!`,
-    },
+      host: "",
+      guide: ``,
+    },*/
   ];
 
   // ✅ 2. Load events from events.json
