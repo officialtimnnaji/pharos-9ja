@@ -225,6 +225,15 @@
       "image": "/images/members/ratking.jpg",
       "twitter": "https://x.com/favour7814?",
       "bio": ""
+    },
+
+    {
+      "id": 23,
+      "name": "Real Rasaq",
+      "role": "Community Member",
+      "image": "/images/members/rasaq.jpg",
+      "twitter": "https://x.com/real_rasaq?",
+      "bio": ""
     }
   ]
 }
