@@ -234,6 +234,14 @@
       "image": "/images/members/rasaq.jpg",
       "twitter": "https://x.com/real_rasaq?",
       "bio": ""
+    },
+    {
+      "id": 23,
+      "name": "Victor",
+      "role": "Community Member",
+      "image": "/images/members/victor.jpg",
+      "twitter": "https://x.com/real_rasaq?",
+      "bio": ""
     }
   ]
 }

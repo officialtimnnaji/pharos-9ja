@@ -2,13 +2,21 @@
    "ongoing": [
     
     
+    {
+      "id": 1,
+      "title": "Happy Birthday Victor",
+      "date": "Friday, Jan. 9th, 2026",
+      
+      
+      "guide": "Join us in celebrating Victor's birthday with exciting activities and surprises throughout the day!"
+    }
   ],
 
   
   "upcoming": [
     
     {
-      "id": 1,
+      "id": 2,
       "title": "Pharos Community X Space",
       "date": "Saturday, Nov 29, 2025",
       "time": "8:00 PM WAT",
